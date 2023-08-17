@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_payments
+    description: Staged customer payments for the orders placed.
+    columns:
+      - name: order_id
+        description: Primary key for payments.
+        tests:
+          - relationships:
+              field: order_id
+              to: ref('stg_orders')
